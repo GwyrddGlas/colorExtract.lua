@@ -103,6 +103,10 @@ function love.draw()
             lg.setColor(color or {1, 1, 1})
             Util.setAlpha(anim[i])
             lg.rectangle("fill", (i - 1) * width, 0, width, lg.getHeight())
+            lg.setColor({0,0,0, 0.6})
+            local r, g, b = math.floor(color[1] * 255), math.floor(color[2] * 255), math.floor(color[3] * 255)
+            local colorString = string.format("RGB: %d, %d, %d", r, g, b)
+            lg.print(colorString, (i - 1) * width + 10, 30)
         end
 
         -- Drawing the image shadow
